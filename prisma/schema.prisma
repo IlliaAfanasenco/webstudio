@@ -50,6 +50,23 @@ model Lead {
   @@index([status])
 }
 
+model Review {
+  id        String  @id @default(cuid())
+  name      String
+  text      String
+  rating    Int     @default(5)
+  avatarUrl String?
+  isActive  Boolean @default(true)
+  order     Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive])
+  @@index([order])
+  @@index([createdAt])
+}
+
 enum LeadStatus {
   NEW
   IN_PROCESS
