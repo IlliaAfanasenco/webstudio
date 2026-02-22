@@ -67,6 +67,30 @@ model Review {
   @@index([createdAt])
 }
 
+model Project {
+  id         String @id @default(cuid())
+  title      String
+  short      String
+  slug       String
+  url        String
+  previewUrl String
+
+  task       String
+  realized   Json
+  technology Json
+  result     String
+
+  isActive Boolean @default(true)
+  order    Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive])
+  @@index([createdAt])
+  @@index([order])
+}
+
 enum LeadStatus {
   NEW
   IN_PROCESS
