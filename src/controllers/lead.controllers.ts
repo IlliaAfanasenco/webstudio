@@ -1,5 +1,5 @@
 import {createdLead} from "../schemas/lead.schemas.js";
-import {leadCreate} from "../services/lead.service.js";
+import {leadCreate} from "../services/lead.services.js";
 import type {Request, Response} from "express";
 
 export async function postLead(req: Request , res: Response) {

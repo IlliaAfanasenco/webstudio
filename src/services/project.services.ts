@@ -20,3 +20,24 @@ export async function projectList(activeOnly: boolean) {
         }
     })
 }
+
+export async function projectBySlug(slug:string){
+    return prisma.project.findMany({
+        where: {slug},
+        select: {
+            id: true,
+            title: true,
+            short: true,
+            slug: true,
+            url: true,
+            previewUrl: true,
+            task: true,
+            realized: true,
+            technology: true,
+            result: true,
+            isActive: true,
+            order: true,
+            createdAt: true,
+        }
+    })
+}
