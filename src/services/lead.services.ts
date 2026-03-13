@@ -8,6 +8,7 @@ export async function leadCreate(data:CreatedLead){
         data: {
             name: data.name,
             phone: data.phone,
+            email: data.email,
             message: data.message,
             serviceSlug: data.serviceSlug ?? null,
             page: data.page ?? null,

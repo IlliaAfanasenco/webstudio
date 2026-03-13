@@ -5,8 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -36,7 +35,7 @@ model Lead {
   email       String
   phone       String
   message     String
-  serviceSlug String
+  serviceSlug String?
   page        String?
   status      LeadStatus @default(NEW)
   ip          String?
@@ -71,7 +70,7 @@ model Project {
   id         String @id @default(cuid())
   title      String
   short      String
-  slug       String
+  slug       String @unique
   url        String
   previewUrl String
 

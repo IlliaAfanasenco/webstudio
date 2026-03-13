@@ -13,8 +13,8 @@ export async function servicesList(activeOnly: boolean) {
             timeline: true,
             priceFrom: true,
             isActive: true,
-
             order: true,
+
             createdAt: true,
             updatedAt: true
         }

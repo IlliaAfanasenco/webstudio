@@ -5,6 +5,10 @@ import type {Request, Response} from "express";
 export async function postLead(req: Request , res: Response) {
     const body = createdLead.parse(req.body);
 
+    if (body.website) {
+        return res.status(200).json({ok: true})
+    }
+
     const lead = await leadCreate({
         name:body.name,
         email:body.email,

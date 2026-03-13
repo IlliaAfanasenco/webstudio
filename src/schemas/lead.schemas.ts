@@ -6,7 +6,8 @@ export const createdLead = z.object({
     phone: z.string().min(5),
     message: z.string().min(4),
     serviceSlug: z.string().optional(),
-    page: z.string().optional()
+    page: z.string().optional(),
+    website: z.string().optional()
 
 })
 
